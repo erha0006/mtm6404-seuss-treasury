@@ -55,6 +55,55 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto; 
+  padding: 1rem;
+}
+
+.book-image {
+  width: 100%; 
+  max-width: 250px; 
+  height: auto; 
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1rem; 
+  max-width: 900px; 
+  margin: 0 auto; 
+  padding: 1rem;
+}
+
+.book-image {
+  width: 100%;
+  max-width: 250px; 
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.book-item:hover .book-image {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
