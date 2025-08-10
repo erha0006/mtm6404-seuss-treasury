@@ -6,6 +6,9 @@ import App from './App';
 import Books from './Books';
 import BookDetail from './BookDetail';
 import Quotes from './Quotes';
+import './App.css';
+import './index.css';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
