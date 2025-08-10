@@ -18,7 +18,8 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none; /* changed from inherit for consistency */
+  transition: color 0.25s ease;
 }
 a:hover {
   color: #535bf2;
@@ -27,14 +28,18 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column; /* better for stacking content */
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--background-color, #242424);
+  color: var(--text-color, rgba(255,255,255,0.87));
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 1rem 0;
 }
 
 button {
@@ -45,8 +50,9 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
+  color: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s ease;
 }
 button:hover {
   border-color: #646cff;
@@ -55,65 +61,71 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive grid */
   gap: 1rem;
   max-width: 900px;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 1rem;
+  width: 100%;
 }
 
-.book-image {
-  width: 100%; 
-  max-width: 250px; 
-  height: auto; 
+.book-item {
+  background: var(--card-bg, #1a1a1a);
   border-radius: 8px;
-  transition: transform 0.3s ease;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.3);
+  padding: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
 }
 
-.book-image:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1rem; 
-  max-width: 900px; 
-  margin: 0 auto; 
-  padding: 1rem;
+.book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.5);
 }
 
 .book-image {
   width: 100%;
-  max-width: 250px; 
   height: auto;
+  max-width: 250px;
   border-radius: 8px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 0.5rem auto;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .book-item:hover .book-image {
   transform: scale(1.05);
-  cursor: pointer;
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --text-color: #213547;
+    --background-color: #ffffff;
+    --card-bg: #f9f9f9;
+  }
+  a {
+    color: #646cff;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+    color: #213547;
+  }
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  .book-item {
+    background: var(--card-bg);
+    box-shadow: 0 4px 8px rgb(33 53 71 / 0.1);
+  }
+  .book-item:hover {
+    box-shadow: 0 10px 20px rgb(33 53 71 / 0.2);
   }
 }

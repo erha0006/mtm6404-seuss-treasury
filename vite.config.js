@@ -3,5 +3,6 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mtm6404-seuss-treasury/',  
+  base: '/mtm6404-seuss-treasury-1/',
 });
+
