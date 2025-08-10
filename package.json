@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "homepage": "https://erha0006.github.io/mtm6404-seuss-treasury/",
+  "homepage": "https://erha0006.github.io/mtm6404-seuss-treasury-1/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
