@@ -7,9 +7,6 @@ import Books from './Books';
 import BookDetail from './BookDetail';
 import Quotes from './Quotes';
 
-import './index.css';
-import './App.css';
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HashRouter>
