@@ -17,19 +17,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />}>
           <Route index element={<Books />} />
           <Route path="books/:id" element={<BookDetail />} />
-          <Route path="quotes" element={<Quotes />} />n
+          <Route path="quotes" element={<Quotes />} />
         </Route>
       </Routes>
     </HashRouter>
   </React.StrictMode>
 );
-<BrowserRouter basename="/mtm6404-seuss-treasury/">
-  <Routes>
-    <Route path="/" element={<App />}>
-      <Route index element={<Books />} />
-      <Route path="books/:id" element={<BookDetail />} />
-      <Route path="quotes" element={<Quotes />} />
-    </Route>
-  </Routes>
-</BrowserRouter>
-
