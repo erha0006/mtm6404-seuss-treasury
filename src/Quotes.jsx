@@ -20,14 +20,13 @@ function Quotes() {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="quotes-container">
       {quotes.map((quote, index) => {
-        // Defensive check for quote text field
         const quoteText = quote.quote || quote.text || "No quote text available";
         return (
-          <div key={index} className="p-4 border rounded bg-yellow-100">
+          <blockquote key={index} className="quote-item">
             {quoteText}
-          </div>
+          </blockquote>
         );
       })}
     </div>
